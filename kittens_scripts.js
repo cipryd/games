@@ -29,4 +29,4 @@ setInterval(function() {
         }
 }, 5 * 1000);
 
-https://www.reddit.com/r/kittensgame/comments/2eqlt5/a_few_kittens_game_scripts_ive_put_together/
+// https://www.reddit.com/r/kittensgame/comments/2eqlt5/a_few_kittens_game_scripts_ive_put_together/
