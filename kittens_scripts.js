@@ -1,4 +1,4 @@
-setInterval(function() {
+auto = setInterval(function() {
     // Automatically Observe Astronomical Events
         $("#observeBtn").click();
         
@@ -36,5 +36,5 @@ setInterval(function() {
             }
         }
 }, 5 * 1000);
-
+clearInterval(auto);
 // https://www.reddit.com/r/kittensgame/comments/2eqlt5/a_few_kittens_game_scripts_ive_put_together/
