@@ -1,0 +1,31 @@
+// Automatically Observe Astronomical Events
+setInterval(function() { $("#gameLog").find("input").click(); }, 2 * 1000);
+
+// Automatically Convert Catnip to Wood
+setInterval(function() {
+    var catnip = gamePage.resPool.get('catnip');
+    var calendar = gamePage.calendar;
+    
+    if (catnip.perTickCached < 0) { return; }
+    if (catnip.value / catnip.maxValue < 0.95) { return; }
+    if (calendar.season == 2 && calendar.day > 50) { return; }
+    gamePage.craftAll('wood');
+}, 5 * 1000);
+
+// Automatically Craft Stuff
+autoCraft = setInterval(function() {
+    var resources = [
+        ["wood",     "beam" ],
+        ["minerals", "slab" ],
+        ["coal",     "steel"],
+        ["iron",     "plate"]
+    ];
+    
+    for (var i = 0; i < resources.length; i++) {
+        var curRes = gamePage.resPool.get(resources[i][0]);
+        if (curRes.value / curRes.maxValue > 0.95
+         && gamePage.workshop.getCraft(resources[i][1]).unlocked) {
+            gamePage.craftAll(resources[i][1]);
+        }
+    }
+}, 5 * 1000);
