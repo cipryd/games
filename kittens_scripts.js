@@ -1,15 +1,4 @@
 auto = setInterval(function() {
-    // Automatically Observe Astronomical Events
-        $("#observeBtn").click();
-        
-    // Automatically Convert Catnip to Wood
-        var catnip = gamePage.resPool.get('catnip');
-        var calendar = gamePage.calendar;
-
-        if (catnip.value / catnip.maxValue > 0.95 && catnip.perTickCached > 0) { 
-            gamePage.craftAll('wood');
-        }
-        
     // Send hunters   
         $("a:contains('Small Town')")[0].click();
         $("div:contains('Manager')")[8].children[1].children[0].click();
@@ -21,6 +10,17 @@ auto = setInterval(function() {
         $("div:contains('Artisan')")[8].children[1].children[0].click();
         $("a:contains('Bonfire')")[0].click();
     
+    // Automatically Observe Astronomical Events
+        $("#observeBtn").click();
+        
+    // Automatically Convert Catnip to Wood
+        var catnip = gamePage.resPool.get('catnip');
+        var calendar = gamePage.calendar;
+
+        if (catnip.value / catnip.maxValue > 0.95 && catnip.perTickCached > 0) { 
+            gamePage.craftAll('wood');
+        }
+        
     // Craft rare materials 
         if (gamePage.workshop.getCraft('parchment').unlocked)  { gamePage.craftAll('parchment');  }
         if (gamePage.workshop.getCraft('manuscript').unlocked) { gamePage.craftAll('manuscript'); }
