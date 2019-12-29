@@ -1,5 +1,5 @@
 // Automatically Observe Astronomical Events
-setInterval(function() { $("#gameLog").find("input").click(); }, 2 * 1000);
+setInterval(function() { $("#observeBtn").click(); }, 2 * 1000);
 
 // Automatically Convert Catnip to Wood
 setInterval(function() {
@@ -29,3 +29,5 @@ autoCraft = setInterval(function() {
         }
     }
 }, 5 * 1000);
+
+https://www.reddit.com/r/kittensgame/comments/2eqlt5/a_few_kittens_game_scripts_ive_put_together/
