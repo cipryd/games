@@ -13,10 +13,7 @@ stuff = setInterval(function() {
         gamePage.craftAll('wood');
     
     // Send hunters    
-        var catpower = gamePage.resPool.get('manpower');
-        if (catpower.value / catpower.maxValue > 0.95) {
-            $("span:contains('Send hunters')").click();
-        }
+        $("span:contains('Send hunters')").click();
     
     // Craft rare materials 
         if (gamePage.workshop.getCraft('parchment').unlocked)  { gamePage.craftAll('parchment');  }
