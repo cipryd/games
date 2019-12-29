@@ -10,8 +10,16 @@ setInterval(function() {
             gamePage.craftAll('wood');
         }
         
-    // Send hunters    
+    // Send hunters   
+        $("a:contains('Small Town')")[0].click();
+        $("div:contains('Manager')")[8].children[1].children[0].click();
+        $("a:contains('Bonfire')")[0].click();
+    
         $("span:contains('Send hunters')").click();
+    
+        $("a:contains('Small Town')")[0].click();
+        $("div:contains('Artisan')")[8].children[1].children[0].click();
+        $("a:contains('Bonfire')")[0].click();
     
     // Craft rare materials 
         if (gamePage.workshop.getCraft('parchment').unlocked)  { gamePage.craftAll('parchment');  }
