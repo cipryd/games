@@ -1,17 +1,15 @@
-// Automatically Observe Astronomical Events
-setInterval(function() { $("#observeBtn").click(); }, 2 * 1000);
-
-stuff = setInterval(function() {
-
+setInterval(function() {
+    // Automatically Observe Astronomical Events
+        $("#observeBtn").click();
+        
     // Automatically Convert Catnip to Wood
         var catnip = gamePage.resPool.get('catnip');
         var calendar = gamePage.calendar;
 
-        if (catnip.perTickCached < 0) { return; }
-        if (catnip.value / catnip.maxValue < 0.95) { return; }
-        if (calendar.season == 2 && calendar.day > 50) { return; }
-        gamePage.craftAll('wood');
-    
+        if (catnip.value / catnip.maxValue > 0.95 && catnip.perTickCached > 0) { 
+            gamePage.craftAll('wood');
+        }
+        
     // Send hunters    
         $("span:contains('Send hunters')").click();
     
@@ -21,20 +19,14 @@ stuff = setInterval(function() {
         if (gamePage.workshop.getCraft('compedium').unlocked)  { gamePage.craftAll('compedium');  }
     
     // Craft base materials
-        var resources = [
-        ["wood",     "beam" ],
-        ["minerals", "slab" ],
-        ["coal",     "steel"],
-        ["iron",     "plate"]
-    ];
+        var resources = [["wood", "beam" ], ["minerals", "slab" ], ["coal", "steel"], ["iron", "plate"]];
     
-    for (var i = 0; i < resources.length; i++) {
-        var curRes = gamePage.resPool.get(resources[i][0]);
-        if (curRes.value / curRes.maxValue > 0.95
-         && gamePage.workshop.getCraft(resources[i][1]).unlocked) {
-            gamePage.craftAll(resources[i][1]);
+        for (var i = 0; i < resources.length; i++) {
+            var curRes = gamePage.resPool.get(resources[i][0]);
+            if (curRes.value / curRes.maxValue > 0.95 && gamePage.workshop.getCraft(resources[i][1]).unlocked) {
+                gamePage.craftAll(resources[i][1]);
+            }
         }
-    }
 }, 5 * 1000);
 
 https://www.reddit.com/r/kittensgame/comments/2eqlt5/a_few_kittens_game_scripts_ive_put_together/
