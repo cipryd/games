@@ -1,9 +1,5 @@
 auto = setInterval(function() {
     // Send hunters   
-        $("a:contains('Small Town')")[0].click();
-        $("div:contains('Manager')")[8].children[1].children[0].click();
-        $("a:contains('Bonfire')")[0].click();
-    
         $("span:contains('Send hunters')").click();
     
         $("a:contains('Small Town')")[0].click();
@@ -35,6 +31,10 @@ auto = setInterval(function() {
                 gamePage.craftAll(resources[i][1]);
             }
         }
+    // Select Manager
+        $("a:contains('Small Town')")[0].click();
+        $("div:contains('Manager')")[8].children[1].children[0].click();
+        $("a:contains('Bonfire')")[0].click();
 }, 5 * 1000);
 clearInterval(auto);
 // https://www.reddit.com/r/kittensgame/comments/2eqlt5/a_few_kittens_game_scripts_ive_put_together/
