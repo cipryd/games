@@ -1,5 +1,6 @@
 auto = setInterval(function() {
     // Send hunters   
+        $("a:contains('Bonfire')")[0].click();
         $("span:contains('Send hunters')").click();
     
         $("a:contains('Small Town')")[0].click();
