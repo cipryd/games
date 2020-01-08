@@ -32,6 +32,11 @@ auto = setInterval(function() {
                 gamePage.craftAll(resources[i][1]);
             }
         }
+    // Praise the sun
+        var faith = gamePage.resPool.get('faith');
+        if (faith.value / faith.maxValue > 0.95) {
+            $("a:contains('Praise the sun')")[0].click();
+        }
     // Select Manager
         $("a:contains('Small Town')")[0].click();
         $("div:contains('Manager')")[8].children[1].children[0].click();
