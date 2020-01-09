@@ -21,6 +21,7 @@ auto = setInterval(function() {
     // Craft rare materials 
         if (gamePage.workshop.getCraft('parchment').unlocked)  { gamePage.craftAll('parchment');  }
         if (gamePage.workshop.getCraft('manuscript').unlocked) { gamePage.craftAll('manuscript'); }
+        if (gamePage.workshop.getCraft('blueprint').unlocked)  { gamePage.craftAll('blueprint');  }
         if (gamePage.workshop.getCraft('compedium').unlocked)  { gamePage.craftAll('compedium');  }
     
     // Craft base materials
